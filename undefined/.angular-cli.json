@@ -1,8 +1,7 @@
-
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "beiqi-art"
+    "name": "home"
   },
   "apps": [
     {
@@ -20,12 +19,9 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "assets/bootstrap/css/bootstrap.css",
         "styles.css"
       ],
-      "scripts": [
-        "assets/bootstrap/js/bootstrap.js"
-      ],
+      "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
@@ -58,8 +54,7 @@
     }
   },
   "defaults": {
-    "styleExt": "scss",
-    "component": {
-    }
+    "styleExt": "css",
+    "component": {}
   }
 }
