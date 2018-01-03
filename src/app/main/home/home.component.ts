@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './index.html',
-  styleUrls: ['./index.scss']
+  templateUrl: './home.html',
+  styleUrls: ['./home.scss']
 })
 
 export class HomeComponent implements OnInit {
