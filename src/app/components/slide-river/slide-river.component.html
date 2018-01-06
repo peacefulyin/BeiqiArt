@@ -1,0 +1,12 @@
+<div class="slider-river d-flex align-items-center">
+  <a class="sr-left" (click)="handleClick($event)" href="#"><</a>
+  <div class="sl-items-con">
+    <ul class="sl-items-ul" #ul>
+      <li *ngFor="let item of itemList" class="sl-items-li" [ngStyle]="{'width':liWidth,'margin-right': liWidth/10}">
+        <a href="#"><img [src]="item.url" alt=""></a>
+      </li>
+    </ul>
+  </div>
+  <a class="sr-right" (click)="handleClick($event)" href="#">></a>
+
+</div>

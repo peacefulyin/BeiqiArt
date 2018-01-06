@@ -1,0 +1,61 @@
+@import "~assets/css/common";
+
+.m-header{
+  .h-top{
+    height: px2rem(80px);
+    .h-top-cards{
+      height: 50%;
+      background-color: rgb(42,42,42);
+      padding: 0 20%;
+      .h-top-cards-con{
+        height: 100%;
+        a{
+          height: 100%;
+          display: inline-block;
+          cursor: pointer;
+          background: #999;
+          text-align: center;
+          color: #222;
+          line-height: px2rem(40px);
+          padding: 0 px2rem(14px);
+          font-size: px2rem(14px);
+        }
+        .top-card-active{
+          color: #ffffff;
+          background: rgb(85,85,85);
+        }
+      }
+    }
+    .h-top-infos{
+      height: 50%;
+      background-color: rgb(85,85,85);
+      .contact-info{
+        margin-left: 25%;
+        a, span{
+          font-size: px2rem(14px);
+          color: #ffffff;
+          line-height: px2rem(40px);
+        }
+      }
+    }
+  }
+  .h-bottom{
+    .brand-con{
+      text-align: center;
+      .brand{
+        text-align: center;
+        padding-top: px2rem(35px);
+        a{
+          display: inline-block;
+          width: 100%;
+          img{
+
+          }
+        }
+      }
+      .h-bottom-slideCards{
+
+      }
+    }
+  }
+}

@@ -1,0 +1,152 @@
+@import "~assets/css/common";
+
+/deep/ .m-header {
+  background: #ffffff;
+}
+
+//轮播图
+.banner-con {
+  background-color: rgb(179, 179, 178);
+  height: px2rem(600px);
+  width: 100%;
+  .carousel, .slide {
+    height: 100%;
+  }
+}
+
+//服务产品信息
+.services-info {
+  width: 100%;
+
+  //三排介绍按钮
+  .si-top {
+    height: px2rem(290px);
+
+    .row-elem-title {
+      font-size: px2rem(24px);
+      font-weight: 500;
+      color: #ffffff;
+    }
+    .si-top-row1 {
+      font-size: 0;
+      .top-row1-elem {
+        position: relative;
+        padding: 0 px2rem(15px);
+        width: 50%;
+        box-sizing: border-box;
+        display: inline-block;
+        .row1-elem-top {
+          .row-elem-title {
+            background-color: rgba(71, 170, 141, 0.9);
+            height: px2rem(70px);
+            color: #ffffff;
+            p {
+              text-align: center;
+              line-height: px2rem(70px);
+              cursor: pointer;
+            }
+          }
+          .row-elem-info {
+            background-color: rgba(255, 255, 255, 0.81);
+            color: #222222;
+            text-align: center;
+            font-size: px2rem(14px);
+            cursor: pointer;
+          }
+        }
+        .row1-elem-bottom {
+          text-align: center;
+          & > div {
+            margin-top: px2rem(10px);
+            display: inline-block;
+            background-color: #47aa8d;
+            font-size: px2rem(14px);
+            padding: px2rem(14px) px2rem(20px);
+            a {
+              color: #ffffff;
+            }
+          }
+
+        }
+      }
+    }
+    .si-top-row2 {
+      font-size: 0;
+      margin-top: px2rem(25);
+      .top-row2-elem {
+        display: inline-block;
+        box-sizing: border-box;
+        padding: 0 px2rem(15px);
+        height: px2rem(90px);
+        line-height: px2rem(90px);
+        p {
+          text-align: center;
+          &:nth-child(1) {
+            background-color: #3b6177;
+          }
+          &:nth-child(2) {
+            background-color: #004b77;
+          }
+          &:nth-child(3) {
+            background-color: #04324d;
+          }
+        }
+
+      }
+    }
+
+  }
+
+  // 产品介绍
+  .si-middle {
+    font-size: 0;
+    .pro-list {
+      .pro-listcard {
+        padding: 0;
+      }
+
+    }
+  }
+
+  .school-intro {
+    background-color: rgba(255, 255, 255, 0.65);
+    .intro-info {
+      & > div, h2 {
+        margin-bottom: px2rem(20px);
+      }
+      padding: px2rem(35px);
+      h2 {
+        line-height: px2rem(20px);
+        font-weight: 500;
+      }
+      .class-list {
+        margin-bottom: px2rem(20px);
+        li {
+          display: inline-block;
+          list-style: disc;
+          font-size: px2rem(16px);
+        }
+      }
+      .intro-content {
+        margin-bottom: px2rem(40px);
+      }
+
+    }
+  }
+  .sl-bottom {
+    background-color: rgb(185, 126, 187);
+    text-align: center;
+    padding-top: px2rem(35px) !important;
+    padding-bottom: px2rem(35px) !important;
+    a {
+      color: #ffffff;
+    }
+  }
+
+}
+
+.app-footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}

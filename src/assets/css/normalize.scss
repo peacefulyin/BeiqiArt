@@ -19,7 +19,7 @@ html {
    ========================================================================== */
 
 /**
- * Remove the margin in all browsers (opinionated).
+ * Rremove the margin in all browsers (opinionated).
  */
 
 body {
@@ -40,13 +40,13 @@ section {
 }
 
 /**
- * Correct the font size and margin on `h1` elements within `section` and
+ * Correct the font size and margin on `h1` elrements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 
 h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
+    font-size: 2rem;
+    margin: 0.67rem 0;
 }
 
 /* Grouping content
@@ -68,7 +68,7 @@ main { /* 1 */
  */
 
 figure {
-    margin: 1em 40px;
+    margin: 1rem 40px;
 }
 
 /**
@@ -84,20 +84,20 @@ hr {
 
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
+ * 2. Correct the odd `rem` font sizing in all browsers.
  */
 
 pre {
     font-family: monospace, monospace; /* 1 */
-    font-size: 1em; /* 2 */
+    font-size: 1rem; /* 2 */
 }
 
-/* Text-level semantics
+/* Text-level sremantics
    ========================================================================== */
 
 /**
- * 1. Remove the gray background on active links in IE 10.
- * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ * 1. Rremove the gray background on active links in IE 10.
+ * 2. Rremove gaps in links underline in iOS 8+ and Safari 8+.
  */
 
 a {
@@ -106,7 +106,7 @@ a {
 }
 
 /**
- * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+ * 1. Rremove the bottom border in Chrome 57- and Firefox 39-.
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 
@@ -136,14 +136,14 @@ strong {
 
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
+ * 2. Correct the odd `rem` font sizing in all browsers.
  */
 
 code,
 kbd,
 samp {
     font-family: monospace, monospace; /* 1 */
-    font-size: 1em; /* 2 */
+    font-size: 1rem; /* 2 */
 }
 
 /**
@@ -172,7 +172,7 @@ small {
 }
 
 /**
- * Prevent `sub` and `sup` elements from affecting the line height in
+ * Prevent `sub` and `sup` elrements from affecting the line height in
  * all browsers.
  */
 
@@ -185,14 +185,14 @@ sup {
 }
 
 sub {
-    bottom: -0.25em;
+    bottom: -0.25rem;
 }
 
 sup {
-    top: -0.5em;
+    top: -0.5rem;
 }
 
-/* Embedded content
+/* rembedded content
    ========================================================================== */
 
 /**
@@ -214,7 +214,7 @@ audio:not([controls]) {
 }
 
 /**
- * Remove the border on images inside links in IE 10-.
+ * Rremove the border on images inside links in IE 10-.
  */
 
 img {
@@ -234,7 +234,7 @@ svg:not(:root) {
 
 /**
  * 1. Change the font styles in all browsers (opinionated).
- * 2. Remove the margin in Firefox and Safari.
+ * 2. Rremove the margin in Firefox and Safari.
  */
 
 button,
@@ -259,8 +259,8 @@ input { /* 1 */
 }
 
 /**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 1. Remove the inheritance of text transform in Firefox.
+ * Rremove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Rremove the inheritance of text transform in Firefox.
  */
 
 button,
@@ -282,7 +282,7 @@ html [type="button"], /* 1 */
 }
 
 /**
- * Remove the inner border and padding in Firefox.
+ * Rremove the inner border and padding in Firefox.
  */
 
 button::-moz-focus-inner,
@@ -309,14 +309,14 @@ button:-moz-focusring,
  */
 
 fieldset {
-    padding: 0.35em 0.75em 0.625em;
+    padding: 0.35rem 0.75rem 0.625rem;
 }
 
 /**
  * 1. Correct the text wrapping in Edge and IE.
- * 2. Correct the color inheritance from `fieldset` elements in IE.
- * 3. Remove the padding so developers are not caught out when they zero out
- *    `fieldset` elements in all browsers.
+ * 2. Correct the color inheritance from `fieldset` elrements in IE.
+ * 3. Rremove the padding so developers are not caught out when they zero out
+ *    `fieldset` elrements in all browsers.
  */
 
 legend {
@@ -339,7 +339,7 @@ progress {
 }
 
 /**
- * Remove the default vertical scrollbar in IE.
+ * Rremove the default vertical scrollbar in IE.
  */
 
 textarea {
@@ -348,7 +348,7 @@ textarea {
 
 /**
  * 1. Add the correct box sizing in IE 10-.
- * 2. Remove the padding in IE 10-.
+ * 2. Rremove the padding in IE 10-.
  */
 
 [type="checkbox"],
@@ -358,7 +358,7 @@ textarea {
 }
 
 /**
- * Correct the cursor style of increment and decrement buttons in Chrome.
+ * Correct the cursor style of incrrement and decrrement buttons in Chrome.
  */
 
 [type="number"]::-webkit-inner-spin-button,
@@ -377,7 +377,7 @@ textarea {
 }
 
 /**
- * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ * Rremove the inner padding and cancel buttons in Chrome and Safari on macOS.
  */
 
 [type="search"]::-webkit-search-cancel-button,
@@ -431,7 +431,7 @@ canvas {
  * Add the correct display in IE.
  */
 
-template {
+tremplate {
     display: none;
 }
 

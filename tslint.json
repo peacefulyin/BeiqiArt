@@ -60,10 +60,7 @@
     "no-empty": false,
     "no-empty-interface": true,
     "no-eval": true,
-    "no-inferrable-types": [
-      true,
-      "ignore-params"
-    ],
+
     "no-misused-new": true,
     "no-non-null-assertion": true,
     "no-shadowed-variable": true,
@@ -85,7 +82,6 @@
     ],
     "prefer-const": true,
 
-    "radix": true,
     "semicolon": [
       true,
       "always"
@@ -107,14 +103,7 @@
     "typeof-compare": true,
     "unified-signatures": true,
     "variable-name": false,
-    "whitespace": [
-      true,
-      "check-branch",
-      "check-decl",
-      "check-operator",
-      "check-separator",
-      "check-type"
-    ],
+
     "directive-selector": [
       true,
       "attribute",
