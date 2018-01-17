@@ -1,36 +1,55 @@
 import {NgModule} from '@angular/core';
-// import {SharedModule} from "../../shared/shared.module";
-import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
+import {HttpClientModule} from '@angular/common/http';
+
 import {HeaderModule} from "../../components/header/header.module";
 import {HomeComponent} from "./home.component";
 import {HomeRoutingModule} from "./home.routing.module";
 import {BannerComponent} from "../../components/banner/banner.component";
 import {CarouselComponent} from "../../components/carousel/carousel.component";
 import {CarouselModule} from 'ngx-bootstrap';
-import {ServicesInfoComponent} from "./services-info/services-info.component";
-import { VideosMasterComponent} from "./videos-master/videos-master.component";
+
+import {VideosMasterComponent} from "./videos-master/videos-master.component";
 import {ProListCardComponent} from "../../components/pro-list-card/pro-list-card.component";
 import {FooterComponent} from "../../components/footer/footer.component";
-
+import {IndexComponent} from "./index/index.component";
+import {TeacherListComponent} from "./teacher-list/teacher-list.component";
+import {VideoListModule} from "./video-list/video-list.module";
+import {EncrollComponent} from "./encroll/encroll.component";
+import {CoreModule} from "../../shared/core.module";
+import {FormsModule} from '@angular/forms';
+import {DialogComponent} from "../../components/dialog/dialog.component";
+import {GenneralService} from "../../api/main/genneral.service";
 
 @NgModule({
   imports: [
     CommonModule,
     HomeRoutingModule,
     CarouselModule,
+    HeaderModule,
+    VideoListModule,
+    CoreModule,
     FormsModule,
-    HeaderModule
+    HttpClientModule
+
   ],
+  providers:[
+    GenneralService
+  ],
+  entryComponents: [DialogComponent],
   declarations: [
     HomeComponent,
     CarouselComponent,
-    ServicesInfoComponent,
     VideosMasterComponent,
     BannerComponent,
     ProListCardComponent,
-    FooterComponent
-  ]
+    FooterComponent,
+    IndexComponent,
+    TeacherListComponent,
+    EncrollComponent,
+    DialogComponent
+  ],
+
 })
 export class HomeModule {
 }

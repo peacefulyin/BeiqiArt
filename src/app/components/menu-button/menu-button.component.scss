@@ -4,10 +4,11 @@
   display: inline-block;
   position: relative;
   vertical-align: top;
-  .menu--title{
+  .menu-title{
     display: inline-block;
     height: 100%;
     color: #222222;
+    cursor: pointer;
     padding: px2rem(18px);
     font-size: px2rem(18px);
     &:hover + .menu-list-con{
@@ -15,6 +16,7 @@
     }
   }
   .menu-list-con{
+    z-index: 1;
     display: none;
     width: px2rem(210px);
     position: absolute;
@@ -26,6 +28,9 @@
       background-color: rgb(74, 74, 74);
       border: px2rem(1px) solid black;
       padding: px2rem(2px) 0;
+      li:nth-child(n+2){
+        border-top: 1px solid black;
+      }
       li a{
         display: inline-block;
         height: 100%;

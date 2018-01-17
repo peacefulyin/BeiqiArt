@@ -2,11 +2,10 @@
   <a class="sr-left" (click)="handleClick($event)" href="#"><</a>
   <div class="sl-items-con">
     <ul class="sl-items-ul" #ul>
-      <li *ngFor="let item of itemList" class="sl-items-li" [ngStyle]="{'width':liWidth,'margin-right': liWidth/10}">
-        <a href="#"><img [src]="item.url" alt=""></a>
+      <li *ngFor="let item of itemList;let i=index"  class="sl-items-li" [ngStyle]="{'width':liWidth,'margin-right': liWidth/10}">
+        <a href="#" (click)="selectVideo($event,i)"><img [src]="'/assets/'+item.url" alt=""></a>
       </li>
     </ul>
   </div>
   <a class="sr-right" (click)="handleClick($event)" href="#">></a>
-
 </div>

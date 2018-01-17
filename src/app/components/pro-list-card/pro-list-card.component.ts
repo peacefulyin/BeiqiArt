@@ -8,6 +8,10 @@ import { Component, OnInit,Input } from '@angular/core';
 export class ProListCardComponent implements OnInit {
   @Input() imgUrl: string;
   @Input() titleTop: boolean = false;
+  @Input() cardColor: string
+  @Input() showButton: boolean = false;
+  @Input() type: string;
+  @Input() CardType: string;
   constructor() { }
 
   ngOnInit() {

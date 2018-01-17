@@ -5,7 +5,6 @@
   display: inline-block;
   padding: px2rem(25px);
   color: #ffffff;
-  background-color: rgb(185, 126, 187);
   img{
     width: 100%;
   }
@@ -22,7 +21,7 @@
     }
 
     button{
-      background-color: rgb(185, 126, 187);
+      background-color: inherit;
       border: px2rem(2px) solid #ffffff;
       padding: px2rem(13px) px2rem(19px);
       color: inherit;

@@ -285,6 +285,10 @@ html [type="button"], /* 1 */
  * Rremove the inner border and padding in Firefox.
  */
 
+body{
+  position: relative;
+}
+
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,

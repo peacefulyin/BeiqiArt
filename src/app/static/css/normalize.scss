@@ -10,9 +10,14 @@
  */
 
 html {
-    line-height: 1.15; /* 1 */
+    line-height: 1.6; /* 1 */
     -ms-text-size-adjust: 100%; /* 2 */
     -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+body{
+  background-color: #e0a800;
+  background-size: 100%;
 }
 
 /* Sections

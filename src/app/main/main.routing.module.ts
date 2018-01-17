@@ -1,13 +1,10 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {ArticleComponent} from "./article/article.component";
 import {SlideRiverComponent} from "../components/slide-river/slide-river.component";
+import {MainComponent} from "./main.component";
 
 const routes: Routes = [
-  {path: '', loadChildren: 'app/main/home/home.module#HomeModule'},
-  {path: 'videoList', loadChildren: 'app/main/video-list/video-list.module#VideoListModule'},
-  {path: 'article', component: ArticleComponent},
-  {path: 'slider', component: SlideRiverComponent}
+  {path: '', component:MainComponent,loadChildren: 'app/main/home/home.module#HomeModule'},
 ];
 
 @NgModule({

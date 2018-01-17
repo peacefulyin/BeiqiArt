@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-menu-button',
@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu-button.component.scss']
 })
 export class MenuButtonComponent implements OnInit {
-
+  @Input() url: string;
+  @Input() title: string = 'title';
+  @Input() childList: Array<object>;
   constructor() { }
 
   ngOnInit() {

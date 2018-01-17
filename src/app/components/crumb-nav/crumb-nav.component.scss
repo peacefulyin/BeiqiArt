@@ -1,0 +1,19 @@
+@import "~assets/css/common";
+.crumb-nav{
+  background: url("/assets/img/main/crumbNav.jpg") no-repeat;
+  background-size: cover;
+  height: 90px;
+  color: #ffffff;
+  .crumb-nav-title{
+    display: inline-block;
+    line-height: 90px;
+    font-size: px2rem(18px);
+    font-weight: 600;
+  }
+  .crumbs{
+    line-height: 90px;
+
+    float: right;
+    font-size: 13px;
+  }
+}

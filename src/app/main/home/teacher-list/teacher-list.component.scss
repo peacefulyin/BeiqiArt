@@ -1,0 +1,29 @@
+@import "~assets/css/common";
+
+.tearcher-list{
+  .teacher-brand{
+    height: px2rem(300px);
+    background: url("/assets/img/main/teachers.jpg") no-repeat;
+    background-size: cover;
+    h1{
+      line-height: px2rem(300px);
+      color: white;
+      text-align: center;
+    }
+  }
+  .teacher-card{
+    padding: px2rem(20px) px2rem(15px);
+    img{
+      width: 100%;
+    }
+    .teacher-name{
+      height: px2rem(60px);
+      background-color: rgb(14,87,130);
+      p{
+        color: white;
+        text-align: center;
+        line-height: px2rem(60px);
+      }
+    }
+  }
+}

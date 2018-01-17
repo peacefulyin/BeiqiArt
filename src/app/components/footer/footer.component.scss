@@ -1,10 +1,51 @@
+@import "~assets/css/common";
+
 .footer{
-  height: 700px;
   background-color: rgb(41,40,40);
-  p,span,h1,h2,h3{
-    color: #828282;
+  .footer-info{
+    padding: px2rem(52px) 0;
+    p,span,h1,h2,h3{
+      color: #828282;
+    }
+    h4{
+      color: #b3b4b5;
+      font-size: px2rem(14px);
+      font-weight: 700;
+      margin-bottom: px2rem(20px);
+    }
   }
-  h4{
-    color: #b3b4b5;
+  .footer-info-left{
+    .footer-brand{
+      img{
+        width: 100%;
+      }
+    }
+    .icons-con{
+      li{
+        display: inline-block;
+        a{
+          display: inline-block;
+          width: px2rem(32px);
+          height:px2rem(32px);
+          img{
+            width: inherit;
+          }
+        }
+      }
+    }
+  }
+  .img-con{
+    img{
+      width: 100%;
+    }
+  }
+
+  .copy-right{
+    height: px2rem(85px);
+    background-color: rgb(33,33,33);
+    p{
+      line-height: px2rem(85px);
+      color: #ffffff;
+    }
   }
 }

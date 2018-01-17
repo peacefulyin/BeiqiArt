@@ -1,7 +1,7 @@
-import {Component, OnInit, ElementRef, ViewChild, AfterViewInit, Input} from '@angular/core';
+import {Component, OnInit, ElementRef, ViewChild, AfterViewInit, Input, Output, EventEmitter} from '@angular/core';
 import {VideoSliderItem} from "../../model/main/video-list.model";
 import {pagingList} from '../../util/js/paging';
-import { VideoService} from "../../api/main/video.service";
+import {VideoService} from "../../api/main/video.service";
 
 @Component({
   selector: 'app-slide-river',
@@ -12,6 +12,7 @@ export class SlideRiverComponent implements OnInit, AfterViewInit {
 
   @Input() pageSize: number = 6;
   @Input() itemList: VideoSliderItem[] = [];
+  @Output() videoSelect = new EventEmitter()
   public nowPage: number = 1;
   public liWidth: string;
   public ulElem: any;
@@ -20,7 +21,6 @@ export class SlideRiverComponent implements OnInit, AfterViewInit {
 
   constructor(private elementRef: ElementRef, private videoService: VideoService) {
     this.liWidth = (1 / this.pageSize) * 100 + '%';
-    this.itemList = this.videoService.getVideos();
   }
 
   ngOnInit() {
@@ -48,6 +48,11 @@ export class SlideRiverComponent implements OnInit, AfterViewInit {
       this.ulElem.style.marginLeft = this.nowMargin + 'px';
       this.nowPage += 1;
     }
+  }
+
+  public selectVideo(e, index) {
+    e.preventDefault();
+    this.videoSelect.emit(index);
   }
 
   private getStyle(el, name) {

@@ -1,8 +1,13 @@
 @import "~assets/css/common";
 
+
 /deep/ .m-header {
   background: #ffffff;
 }
+
+
+
+
 
 //轮播图
 .banner-con {
@@ -145,8 +150,13 @@
 
 }
 
-.app-footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
+//弹窗动态组件
+.dialog-con{
+  z-index: 3;
+  width: 400px;
+  height:400px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
 }

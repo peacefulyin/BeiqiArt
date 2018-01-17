@@ -1,0 +1,32 @@
+.common-dialog{
+  background-color: rgb(238,238,238);
+  h1,h2,p{
+    text-align: center;
+    color: #fff;
+  }
+  h1{
+    background-color: #3b88b6;
+    color: #fff;
+    padding: 15px;
+    font-size: 30px;
+  }
+  h2{
+    background-color: #25516b;
+    padding: 15px;
+    font-size: 20px;
+    text-decoration: underline;
+  }
+  .img-con{
+    margin-bottom: 20px;
+    img{
+      width: 100%;
+    }
+  }
+  .diolog-info{
+    padding: 15px;
+    p{
+      font-size: 15px;
+    }
+  }
+
+}

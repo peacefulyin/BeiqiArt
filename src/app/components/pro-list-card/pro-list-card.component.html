@@ -1,15 +1,17 @@
-<div class="pro-list-card">
-  <div *ngIf="!titleTop"><img [src]="imgUrl" alt=""></div>
-  <div class="list-card-info">
-    <div class="card-subtitle"><span>AGES 2 – 7</span></div>
-    <div class="card-title">
+<div class="pro-list-card" [ngStyle]="{'background-color':cardColor}">
+  <div *ngIf="CardType==='index'"><img [src]="imgUrl" alt=""></div>
+  <div class="list-card-info" [ngStyle]="{'margin': CardType==='videoMaster'? 0 : auto}">
+    <div *ngIf="CardType==='index'" class="card-subtitle"><span>AGES 2 – 7</span></div>
+    <div class="card-title" [ngStyle]="{'margin': CardType==='videoMaster'? 0 : auto}">
       <p>CHILDREN'S BALLET Learn more</p>
     </div>
-    <div class="card-button-con">
+    <div *ngIf="CardType==='videoMaster'" class="card-subtitle" [ngStyle]="{'margin-bottom': CardType==='videoMaster'? '20px' : auto}"><span>Click to see videos</span></div>
+
+    <div *ngIf="CardType==='index'" class="card-button-con">
       <button>Learn more</button>
     </div>
   </div>
-  <div *ngIf="titleTop"><img [src]="imgUrl" alt=""></div>
+  <div *ngIf="CardType==='videoMaster'"><img [src]="imgUrl" alt=""></div>
 
 
 </div>
