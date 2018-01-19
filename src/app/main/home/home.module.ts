@@ -20,9 +20,11 @@ import {EncrollComponent} from "./encroll/encroll.component";
 import {CoreModule} from "../../shared/core.module";
 import {FormsModule} from '@angular/forms';
 import {DialogComponent} from "../../components/dialog/dialog.component";
-import {GenneralService} from "../../api/main/genneral.service";
 import {GenneralComponent} from "../../components/genneral/genneral.component";
 import {LoadingComponent} from "../../components/loading/loading.component";
+
+import {GenneralService} from "../../shared/api/main/genneral.service";
+
 
 @NgModule({
   imports: [

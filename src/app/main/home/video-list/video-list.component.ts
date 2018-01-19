@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {VideoService} from "../../../api/main/video.service";
+import {VideoService} from "../../../shared/api/main/video.service";
 
 @Component({
   selector: 'app-video-list',

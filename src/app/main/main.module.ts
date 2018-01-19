@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {MainComponent} from './main.component';
 import {MainRoutingModule} from "./main.routing.module";
 import {CarouselModule} from 'primeng/primeng';
-import { VideoService} from "../api/main/video.service";
+import { VideoService} from "../shared/api/main/video.service";
 import 'hammerjs';
 
 @NgModule({

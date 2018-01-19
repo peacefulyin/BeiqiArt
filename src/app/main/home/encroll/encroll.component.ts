@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {EncrollForm} from "../../../model/main/encroll.model";
-import {EncrollService} from "../../../api/main/encroll.service";
-import {GenneralService} from "../../../api/main/genneral.service";
+import {EncrollForm} from "../../../shared/model/main/encroll.model";
+import {EncrollService} from "../../../shared/api/main/encroll.service";
+import {GenneralService} from "../../../shared/api/main/genneral.service";
 import {DialogComponent} from "../../../components/dialog/dialog.component";
 import {LoadingComponent} from "../../../components/loading/loading.component";
 

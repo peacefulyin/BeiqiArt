@@ -7,7 +7,7 @@ import {TeacherListComponent} from "./teacher-list/teacher-list.component";
 import {VideoListComponent} from "./video-list/video-list.component";
 import {EncrollComponent} from "./encroll/encroll.component";
 import {ArticleComponent} from "./article/article.component";
-
+import {ArticleResolver} from "../../shared/service/resolver/article-resolver.service";
 
 const routes: Routes = [
   {path: '', component: HomeComponent, children: [
@@ -34,6 +34,9 @@ const routes: Routes = [
     {
       path: 'article/:id',
       component: ArticleComponent,
+      resolve: {
+        article: ArticleResolver
+      }
     },
 
 
@@ -43,7 +46,8 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [ArticleResolver]
 })
 
 export class HomeRoutingModule {

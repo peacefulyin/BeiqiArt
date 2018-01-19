@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {promptColors} from "../../model/main/genneral.model";
+import {promptColors} from "../../shared/model/main/genneral.model";
 import {
   trigger,
   state,

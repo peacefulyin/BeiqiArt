@@ -1,7 +1,7 @@
 import {Component, OnInit, ElementRef, ViewChild, AfterViewInit, Input, Output, EventEmitter} from '@angular/core';
-import {VideoSliderItem} from "../../model/main/video-list.model";
+import {VideoSliderItem} from "../../shared/model/main/video-list.model";
 import {pagingList} from '../../util/js/paging';
-import {VideoService} from "../../api/main/video.service";
+import {VideoService} from "../../shared/api/main/video.service";
 
 @Component({
   selector: 'app-slide-river',

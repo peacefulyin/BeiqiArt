@@ -1,5 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
-import {GenneralService} from "../../api/main/genneral.service";
+import {GenneralService} from "../../shared/api/main/genneral.service";
 
 @Component({
   selector: 'app-dialog',

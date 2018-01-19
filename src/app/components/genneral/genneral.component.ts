@@ -9,7 +9,7 @@ import {
   ComponentFactory,
   ComponentRef
 } from '@angular/core';
-import {GenneralService} from "../../api/main/genneral.service";
+import {GenneralService} from "../../shared/api/main/genneral.service";
 import {DialogComponent} from "../dialog/dialog.component";
 import {LoadingComponent} from "../loading/loading.component";
 
