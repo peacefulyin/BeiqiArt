@@ -6,6 +6,7 @@ import {VideosMasterComponent} from "./videos-master/videos-master.component";
 import {TeacherListComponent} from "./teacher-list/teacher-list.component";
 import {VideoListComponent} from "./video-list/video-list.component";
 import {EncrollComponent} from "./encroll/encroll.component";
+import {ArticleComponent} from "./article/article.component";
 
 
 const routes: Routes = [
@@ -29,6 +30,10 @@ const routes: Routes = [
     {
       path: 'enroll',
       component: EncrollComponent,
+    },
+    {
+      path: 'article/:id',
+      component: ArticleComponent,
     },
 
 

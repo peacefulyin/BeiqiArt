@@ -8,6 +8,7 @@ import {HomeRoutingModule} from "./home.routing.module";
 import {BannerComponent} from "../../components/banner/banner.component";
 import {CarouselComponent} from "../../components/carousel/carousel.component";
 import {CarouselModule} from 'ngx-bootstrap';
+import {ArticleModule} from "./article/article.module";
 
 import {VideosMasterComponent} from "./videos-master/videos-master.component";
 import {ProListCardComponent} from "../../components/pro-list-card/pro-list-card.component";
@@ -20,6 +21,8 @@ import {CoreModule} from "../../shared/core.module";
 import {FormsModule} from '@angular/forms';
 import {DialogComponent} from "../../components/dialog/dialog.component";
 import {GenneralService} from "../../api/main/genneral.service";
+import {GenneralComponent} from "../../components/genneral/genneral.component";
+import {LoadingComponent} from "../../components/loading/loading.component";
 
 @NgModule({
   imports: [
@@ -30,13 +33,14 @@ import {GenneralService} from "../../api/main/genneral.service";
     VideoListModule,
     CoreModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ArticleModule
 
   ],
   providers:[
     GenneralService
   ],
-  entryComponents: [DialogComponent],
+  entryComponents: [DialogComponent, LoadingComponent],
   declarations: [
     HomeComponent,
     CarouselComponent,
@@ -47,7 +51,9 @@ import {GenneralService} from "../../api/main/genneral.service";
     IndexComponent,
     TeacherListComponent,
     EncrollComponent,
-    DialogComponent
+    DialogComponent,
+    LoadingComponent,
+    GenneralComponent
   ],
 
 })

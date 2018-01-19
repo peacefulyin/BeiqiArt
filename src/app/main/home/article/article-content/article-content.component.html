@@ -1,0 +1,16 @@
+<div class="article-con container">
+  <!--<h1 class="title">{{article.title}}</h1>-->
+  <!--<div class="row article-info">-->
+    <!--<div class="labels">-->
+      <!--<ul>-->
+        <!--<li *ngFor="let label of labels">{{article.title}}</li>-->
+      <!--</ul>-->
+    <!--</div>-->
+    <!--<span class="pub-date">{{pubDate}}</span>-->
+    <!--<span class="author">{{authorName}}</span>-->
+  <!--</div>-->
+  <div class="row article" *ngIf="article" [innerHTML]="article.content">
+
+  </div>
+
+</div>

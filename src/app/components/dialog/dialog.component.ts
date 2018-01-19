@@ -8,7 +8,9 @@ import {GenneralService} from "../../api/main/genneral.service";
 })
 export class DialogComponent implements OnInit {
   @Input() title: string;
-
+  @Input() subTitle: string;
+  @Input() imgUrl: string;
+  @Input() detail: string;
   constructor(private genneralService: GenneralService) {
   }
 

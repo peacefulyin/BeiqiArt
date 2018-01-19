@@ -13,6 +13,11 @@
   @return ($px / $base-font-size) * 1rem;
 }
 
+@mixin boxShadow() {
+  border: 1px solid rgba(0,0,0,.03);
+  box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+}
+
 @function mapToKey($map) {
   @each $key, $value in $map {
     @return $key

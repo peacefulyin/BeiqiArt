@@ -9,7 +9,8 @@ import {
   MatNativeDateModule,
   MatOptionModule,
   MatSelectModule,
-  MatButtonModule
+  MatButtonModule,
+  MatProgressSpinnerModule
 } from '@angular/material';
 
 
@@ -27,7 +28,8 @@ import {NgModule} from '@angular/core';
     MatNativeDateModule,
     MatOptionModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     MatFormFieldModule,
@@ -38,7 +40,8 @@ import {NgModule} from '@angular/core';
     MatNativeDateModule,
     MatOptionModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    MatProgressSpinnerModule
   ],
 })
 

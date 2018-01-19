@@ -1,0 +1,32 @@
+.global-cover{
+  background: rgba(0,0,0,.7);
+  position: absolute;
+  left: 0;
+  right:0;
+  top:0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.global-loading{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 11;
+}
+
+.global-prompt{
+  color: #ffffff;
+  position: fixed;
+  right: 5%;
+  top: 20%;
+  transform: translate(-50%,-50%);
+  width: 200px;
+  height: 80px;
+  padding: 15px;
+  z-index: 11;
+  h4,p{
+    text-align: center;
+  }
+}

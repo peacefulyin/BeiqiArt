@@ -1,8 +1,16 @@
 .common-dialog{
+  z-index: 3;
+  width: 600px;
+  height:800px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
   background-color: rgb(238,238,238);
   h1,h2,p{
     text-align: center;
     color: #fff;
+    margin: 0;
   }
   h1{
     background-color: #3b88b6;
@@ -24,9 +32,15 @@
   }
   .diolog-info{
     padding: 15px;
+    background-color: rgb(141,167,183);
     p{
       font-size: 15px;
+      font-weight: 700;
     }
+  }
+  .button-con{
+    text-align: center;
+    padding: 10px 0;
   }
 
 }

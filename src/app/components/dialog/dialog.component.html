@@ -1,13 +1,13 @@
-<div class="common-dialog">
+<div class="common-dialog" *ngIf="title">
   <h1>{{title}}</h1>
-  <h2></h2>
+  <h2>{{subTitle}}</h2>
   <div class="img-con">
-    <img src="http://via.placeholder.com/550x550" alt="">
+    <img [src]="imgUrl" alt="">
   </div>
   <div class="diolog-info">
-    <p></p>
+    <p>{{detail}}</p>
   </div>
   <div class="button-con">
-    <button (click)="close()">不再提示</button>
+    <button mat-raised-button (click)="close()">不再提示</button>
   </div>
 </div>

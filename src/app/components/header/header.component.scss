@@ -41,11 +41,12 @@
     }
   }
   .h-bottom {
+    height: px2rem(205px);
     .brand-con {
       text-align: center;
       .brand {
         text-align: center;
-        padding-top: px2rem(35px);
+        padding-top: px2rem(25px);
         a {
           display: inline-block;
           width: 100%;

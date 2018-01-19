@@ -1,79 +1,90 @@
 <div class="encroll">
-  <button mat-raised-button (click)="showIt()">显示</button>
   <div class="container">
-    <form>
-      <div class="row">
-        <h2>申请表</h2>
-      </div>
-      <div class="row">
-        <!--姓名-->
-        <div class="col-2">
-          <mat-form-field class="example-full-width">
-            <input matInput [(ngModel)]="encrollForm.name" name="name" placeholder="姓名" required>
-          </mat-form-field>
-        </div>
-        <!--性别-->
-        <div class="col-2 text-center">
-          <mat-radio-group  [(ngModel)]="encrollForm.gender" name="gender">
-            <mat-radio-button   value="1">男</mat-radio-button>
-            <mat-radio-button   value="2">女</mat-radio-button>
-          </mat-radio-group>
-        </div>
-        <!--年龄-->
-        <div class="col-4">
-          <label>年龄</label> {{age.value}}
-          <mat-slider [(ngModel)]="encrollForm.age" name="age" #age thumbLabel min="3" max="18" step="1" value="3" class="w-100"></mat-slider>
-        </div>
-      </div>
+    <div class="row">
+      <div class="form-con col-6">
+        <form>
+          <div class="row">
+            <h2>预约申请表</h2>
+          </div>
+          <div class="row">
+            <!--姓名-->
+            <div class="col-4">
+              <mat-form-field class="example-full-width">
+                <input matInput [(ngModel)]="encrollForm.name" name="name" placeholder="姓名" required>
+              </mat-form-field>
+            </div>
+            <!--性别-->
+            <div class="col-4 text-center">
+              <mat-radio-group  [(ngModel)]="encrollForm.gender" name="gender">
+                <mat-radio-button   value="1">男</mat-radio-button>
+                <mat-radio-button   value="2">女</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
 
-      <div class="row">
-        <!--家长姓名-->
-        <div class="col-2">
-          <mat-form-field class="example-full-width">
-            <input [(ngModel)]="encrollForm.parentName" name="parentName" matInput placeholder="家长姓名" required>
-          </mat-form-field>
-        </div>
-        <!--手机-->
-        <div class="col-2">
-          <mat-form-field class="example-full-width">
-            <input matInput [(ngModel)]="encrollForm.phone" name="phone" placeholder="手机号码" required type="tel">
-          </mat-form-field>
+          <div class="row">
+            <!--年龄-->
+            <div class="col-8">
+              <label class="age-label">年龄</label> {{age.value}}
+              <mat-slider [(ngModel)]="encrollForm.age" name="age" #age thumbLabel min="3" max="18" step="1" value="3" class="w-100"></mat-slider>
+            </div>
+          </div>
 
-        </div>
-      </div>
+          <div class="row">
+            <!--家长姓名-->
+            <div class="col-4">
+              <mat-form-field class="example-full-width">
+                <input [(ngModel)]="encrollForm.parentName" name="parentName" matInput placeholder="家长姓名" required>
+              </mat-form-field>
+            </div>
+            <!--手机-->
+            <div class="col-4">
+              <mat-form-field class="example-full-width">
+                <input matInput [(ngModel)]="encrollForm.phone" name="phone" placeholder="手机号码" required type="tel">
+              </mat-form-field>
 
-      <div class="row">
-        <!--课程-->
-        <div class="col-2">
-          <mat-form-field>
-            <mat-select placeholder="课程" [(ngModel)]="encrollForm.course" name="course">
-              <mat-option *ngFor="let food of foods" [value]="food">
-                {{ food }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <!--日期-->
-        <div class="col-2">
-          <mat-form-field>
-            <input matInput [(ngModel)]="encrollForm.date" name="date" [matDatepicker]="picker" required placeholder="预约时间">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
-        </div>
-      </div>
+            </div>
+          </div>
 
-      <div class="row">
-        <!--备注-->
-        <div class="col-12">
-          <mat-form-field>
+          <div class="row">
+            <!--课程-->
+            <div class="col-4">
+              <mat-form-field>
+                <mat-select placeholder="课程" [(ngModel)]="encrollForm.course" name="course">
+                  <mat-option *ngFor="let food of foods" [value]="food">
+                    {{ food }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <!--日期-->
+            <div class="col-4">
+              <mat-form-field>
+                <input matInput [(ngModel)]="encrollForm.date" name="date" [matDatepicker]="picker" required placeholder="预约时间">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row">
+            <!--备注-->
+            <div class="col-12">
+              <mat-form-field>
             <textarea [(ngModel)]="encrollForm.remark" matInput  name="remark" placeholder="备注信息" matTextareaAutosize matAutosizeMinRows="2"
                       matAutosizeMaxRows="5"></textarea>
-          </mat-form-field>
-        </div>
+              </mat-form-field>
+            </div>
+          </div>
+          <button mat-raised-button (click)="sendEnroll()">提交</button>
+        </form>
       </div>
-      <button mat-raised-button (click)="sendEnroll()">提交</button>
-    </form>
+      <div class="col-6 encroll-img-con">
+        <img src="http://via.placeholder.com/400x500" alt="">
+      </div>
+    </div>
+
+
 
   </div>
 </div>
