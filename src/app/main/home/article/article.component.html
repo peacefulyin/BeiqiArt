@@ -1,7 +1,18 @@
 <div class="container-fluid">
   <div class="row justify-content-center">
-    <div class="col-5">
+    <div class="col-5 main">
       <app-article-content article={{articleItem}}></app-article-content>
+      <div class="row justify-content-between">
+        <a [routerLink]="['/article/',articlePage-1]" class="prev-page"  [ngStyle]="{'cursor':prevArticle? 'pointer': 'default'}">
+          <span class="alter-page-label">上一篇</span>
+          <div class="alter-page-title"><span>{{prevArticle.title}}</span></div>
+        </a>
+        <a [routerLink]="['/article/',articlePage+1]" class="next-page" [ngStyle]="{'cursor':nextArticle? 'pointer': 'default'}">
+          <span class="alter-page-label">下一篇</span>
+          <div class="alter-page-title"><span>{{nextArticle.title}}</span></div>
+        </a>
+      </div>
     </div>
   </div>
 </div>
+

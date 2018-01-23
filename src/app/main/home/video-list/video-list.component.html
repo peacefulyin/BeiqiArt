@@ -1,20 +1,15 @@
 <app-crumb-nav></app-crumb-nav>
 <div class="videos-parent container-fluid">
   <div class="row">
-    <div class="col-4">
-      <h2>Children's and Youth Ballet</h2>
-      <p>Click to see videos</p>
+    <div class="col-4" *ngFor="let list of defaultVideoList">
+      <a [routerLink]="['/videoList', list.title]">
+        <h2>{{list.title}}</h2>
+        <p>{{list.describe}}</p>
+      </a>
     </div>
-    <div class="col-4">
-      <h2>Children's and Youth Ballet</h2>
-      <p>Click to see videos</p>
-    </div>
-    <div class="col-4">
-      <h2>Children's and Youth Ballet</h2>
-      <p>Click to see videos</p>
-    </div>
+
   </div>
 </div>
 <div class="video-list container">
-  <app-video-card class="video-card-con" [videoItemList]="videoItemList"></app-video-card>
+  <app-video-card class="video-card-con" [videoList]="videoList.videos"></app-video-card>
 </div>

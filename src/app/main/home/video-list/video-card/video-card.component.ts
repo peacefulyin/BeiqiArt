@@ -6,18 +6,26 @@ import {Component, OnInit, Input, Output, EventEmitter, ElementRef} from '@angul
   styleUrls: ['./video-card.component.scss']
 })
 export class VideoCardComponent implements OnInit {
-  @Input() videoItemList;
+  @Input() videoList;
+  public imageList = [];
   private iframeElem;
 
   constructor(private elementRef: ElementRef) {
   }
 
+  // 切换视频
   onselect(index) {
-    const newVideo = this.videoItemList[index]
-    this.iframeElem.src = newVideo.videoUrl;
+    const newVideo = this.videoList[index]
+    this.iframeElem.src = newVideo.link;
   }
 
   ngOnInit() {
+    // 得到图片数组
+    this.videoList.forEach((v, k) => {
+      this.imageList.push({url: v.image});
+    })
+
+    // 获取iframe元素
     this.iframeElem = this.elementRef.nativeElement.querySelector('.video-frame');
   }
 

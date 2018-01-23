@@ -1,8 +1,6 @@
 <div class="videos-master container-fluid">
   <app-crumb-nav></app-crumb-nav>
   <div class="card-list row">
-    <app-pro-list-card CardType="videoMaster"  class="col-4" cardColor="rgb(0,0,0)" imgUrl="../assets/img/main/proList/videoMaster-1.jpg "></app-pro-list-card>
-    <app-pro-list-card CardType="videoMaster"  class="col-4" cardColor="rgb(76,76,76)"  imgUrl="../assets/img/main/proList/videoMaster-2.jpg "></app-pro-list-card>
-    <app-pro-list-card CardType="videoMaster"  class="col-4" cardColor="rgb(196,196,196)"  imgUrl="../assets/img/main/proList/videoMaster-3.jpg "></app-pro-list-card>
+    <app-pro-list-card *ngFor="let list of defaultVideoList" CardType="videoMaster"  class="col-4" [title]="list.title" [cardColor]="list.color" [imgUrl]="'http://127.0.0.1:8000'+list.image"></app-pro-list-card>
   </div>
 </div>

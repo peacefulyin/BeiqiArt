@@ -35,12 +35,8 @@
     <div class="brand-con">
       <div class="brand"><a href=""><img class="img-fluid" [src]="'assets/img/main/logo.png'" alt=""></a></div>
       <div class="h-bottom-slideCards">
-        <app-menu-button [title]="'index'" [url]="'/'"></app-menu-button>
-        <app-menu-button [title]="'videoMaster'" [url]="'videoMaster'"></app-menu-button>
-        <app-menu-button [title]="'videoList'" [url]="'/videoList'"></app-menu-button>
-        <app-menu-button [title]="'teachers'" [url]="'/teachers'"></app-menu-button>
-        <app-menu-button [title]="'enroll'" [url]="'/enroll'"></app-menu-button>
-        <app-menu-button [title]="'article'" [url]="'/article/1'"></app-menu-button>
+        <app-menu-button *ngFor="let item of menuList" [title]="item.title" [url]="item.url"></app-menu-button>
+
       </div>
     </div>
   </div>

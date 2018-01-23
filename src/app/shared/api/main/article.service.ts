@@ -9,8 +9,8 @@ export class ArticleService {
 
   }
 
-  getArticle(value) {
-    return this.http.get(`http://127.0.0.1:8000/api/article/${value}`);
-
+  getArticle(id) {
+    return this.http.get(`http://127.0.0.1:8000/api/article/${id}`);
   }
+
 }

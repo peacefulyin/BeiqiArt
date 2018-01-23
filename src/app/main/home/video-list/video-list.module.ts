@@ -4,16 +4,19 @@ import {VideoListComponent} from "./video-list.component";
 import {VideoCardComponent} from "./video-card/video-card.component";
 import {SlideRiverComponent} from "../../../components/slide-river/slide-river.component";
 import {CrumbNavComponent} from "../../../components/crumb-nav/crumb-nav.component";
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
+
   ],
   declarations: [
     VideoCardComponent,
     VideoListComponent,
     SlideRiverComponent,
-    CrumbNavComponent
+    CrumbNavComponent,
   ],
   exports: [
     VideoCardComponent,

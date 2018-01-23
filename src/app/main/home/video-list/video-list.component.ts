@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {VideoService} from "../../../shared/api/main/video.service";
 
 @Component({
@@ -7,10 +7,23 @@ import {VideoService} from "../../../shared/api/main/video.service";
   styleUrls: ['./video-list.component.scss']
 })
 export class VideoListComponent implements OnInit {
-  public videoItemList
   public VideoIndex: number;
+  public defaultVideoList;
+  public videoList;
+
   constructor(private videoService: VideoService) {
-    this.videoItemList = this.videoService.getVideos();
+    console.log('hasVideo', sessionStorage.getItem('hasVideo'));
+    if (!sessionStorage.getItem('hasVideo')) {
+      this.videoService.getColorsDefaultList().subscribe(rxData => {
+        this.defaultVideoList = rxData;
+        this.videoList = this.defaultVideoList[0];
+        sessionStorage.setItem("defaultVideoList", this.defaultVideoList);
+        sessionStorage.setItem("hasVideo", 'true');
+      });
+    } else {
+      this.defaultVideoList = JSON.parse(sessionStorage.getItem('defaultVideoList'));
+      this.videoList = this.defaultVideoList[0];
+    }
   }
 
   ngOnInit() {

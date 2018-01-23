@@ -1,0 +1,22 @@
+@import "~assets/css/common";
+
+.main{
+  margin: px2rem(50px) 0;
+  .prev-page, .next-page{
+    display: inline-block;
+    cursor: pointer;
+    padding: px2rem(20px) 0;
+    text-align: center;
+    width: px2rem(120px);
+    height: px2rem(70px);
+    @include boxShadow();
+    .alter-page-label{
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .alter-page-title{
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+}

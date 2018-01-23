@@ -1,37 +1,52 @@
 @import "~assets/css/common";
 
-.pro-list-card{
+.pro-list-card {
+  height: 100%;
   width: 100%;
   display: inline-block;
   padding: px2rem(25px);
   color: #ffffff;
-  img{
-    width: 100%;
+  .img-con {
+    height: 80%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
-  .list-card-info{
+
+  .list-card-info {
     margin-top: px2rem(35px);
-    & > div{
+    text-align: center;
+    & > div {
       text-align: center;
     }
-    .card-subtitle{
-      font-size: px2rem(15px);
+    .card-link {
+      display: inline-block;
+      color: white;
+      &:hover .card-title {
+        text-decoration: underline;
+      }
     }
-    .card-title{
-      font-size: px2rem(24px);
+    .card-subtitle {
+      font-size: px2rem(17px);
+    }
+    .card-title {
+      font-size: px2rem(28px);
     }
 
-    button{
+    button {
+      cursor: pointer;
       background-color: inherit;
       border: px2rem(2px) solid #ffffff;
       padding: px2rem(13px) px2rem(19px);
       color: inherit;
       font-size: px2rem(14px);
-      &:hover{
+      &:hover {
         color: #222222;
         background-color: #FFF;
       }
     }
   }
-
 
 }

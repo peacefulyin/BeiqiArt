@@ -7,10 +7,10 @@
         <li *ngFor="let tag of article.tags">{{tag}}</li>
       </ul>
     </div>
-    <span class="pub-date">{{article.create_time}}</span>
+    <span class="pub-date">{{article.create_time| date:'yyyy-MM-dd'}}</span>
     <span class="author">{{article.author}}</span>
   </div>
-  <div class="row article" *ngIf="article" [innerHTML]="articleContent">
+  <div class="row article" *ngIf="article" [innerHTML]="articleContent| safeHtml">
 
   </div>
 

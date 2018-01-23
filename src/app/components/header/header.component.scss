@@ -2,6 +2,7 @@
 
 
 .m-header {
+  @include boxShadowBottom();
   .h-top {
     height: px2rem(80px);
     .h-top-cards {
@@ -28,6 +29,8 @@
       }
     }
     .h-top-infos {
+      @include boxShadowBottom();
+
       height: 50%;
       background-color: rgb(85, 85, 85);
       .contact-info {
@@ -49,7 +52,6 @@
         padding-top: px2rem(25px);
         a {
           display: inline-block;
-          width: 100%;
           img {
 
           }

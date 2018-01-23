@@ -8,7 +8,6 @@ import {SlideRiverComponent} from "./slide-river/slide-river.component";
 import {CarouselModule} from 'primeng/primeng';
 import {MenuButtonComponent} from "./menu-button/menu-button.component";
 import {ProListCardComponent} from "./pro-list-card/pro-list-card.component";
-import {MainComponent} from "../main/main.component";
 
 @NgModule({
   imports: [
