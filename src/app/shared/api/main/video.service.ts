@@ -55,7 +55,7 @@ export class VideoService {
   }
 
   getColorsDefaultList() {
-    return this.getDefaultList().flatMap((data:Array<object) => {
+    return this.getDefaultList().flatMap((data: Array<object>) => {
       const videoListOb = Rx.Observable.from(data);
       const colorList = Rx.Observable.from(['rgb(128,128,128)', 'rgb(85,85,85)', 'rgb(64,64,64)']);
       return Rx.Observable.zip(videoListOb, colorList, (list, Color) => {

@@ -70,7 +70,6 @@ export class GenneralComponent implements OnInit, OnDestroy {
       this.loadingComponentRef.instance.showCover = data.showCover ? data.showCover : false;
       this.loadingComponentRef.instance.showLoading = data.showLoading ? data.showCover : false;
       if (data.prompt) {
-        console.log(data.prompt.color)
         this.loadingComponentRef.instance.showPrompt = true;
         this.loadingComponentRef.instance.promptTitle = data.prompt.title ? data.prompt.title : '';
         this.loadingComponentRef.instance.promptInfo = data.prompt.info ? data.prompt.info : '';

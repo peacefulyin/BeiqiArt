@@ -15,33 +15,21 @@ export class VideosMasterComponent implements OnInit {
   }
 
   getVideos() {
-    console.log('hasVideo', sessionStorage.getItem('hasVideo'));
+    // 根据是否已经缓存视频数据来对应处理。
     if (!sessionStorage.getItem('hasVideo')) {
       this.videoService.getColorsDefaultList().subscribe(rxData => {
         this.defaultVideoList = rxData;
-        console.log('before',this.defaultVideoList)
         sessionStorage.setItem("defaultVideoList", JSON.stringify(this.defaultVideoList));
         sessionStorage.setItem("hasVideo", 'true');
       });
     } else {
       this.defaultVideoList = JSON.parse(sessionStorage.getItem('defaultVideoList'));
-
     }
   }
 
   ngOnInit() {
   }
 
-  private test() {
-    const ob1 = Rx.Observable.from([1, 2, 3]);
-    const ob2 = Rx.Observable.from(['a', 'b', 'c']);
-    const newOb = Rx.Observable.zip(ob1, ob2, (x, y) => {
-      return x + y;
-    });
-    newOb.subscribe(data => {
-      console.log(data);
 
-    });
-  }
 
 }

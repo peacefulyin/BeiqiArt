@@ -1,0 +1,9 @@
+<div class="course-list container">
+  <div class="row">
+    <div class="card-item col-4" *ngFor="let course of courseList">
+      <app-pro-list-card CardType="index" [imgUrl]="course.img? course.img : '../assets/img/main/proList/cp1.jpg'" [title]="course.name" [cardColor]="course.color"></app-pro-list-card>
+    </div>
+  </div>
+
+
+</div>

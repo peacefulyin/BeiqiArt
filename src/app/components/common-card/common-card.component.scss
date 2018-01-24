@@ -1,0 +1,32 @@
+@import "~assets/css/common";
+.card{
+  position: relative;
+  overflow: hidden;
+  img{
+    width: 100%;
+  }
+  .title{
+    padding: px2rem(10px);
+    background-color: rgb(14,87,130);
+    h3{
+      color: white;
+      text-align: center;
+    }
+  }
+  &:hover .cover-desc{
+    bottom: 0;
+  }
+  .cover-desc{
+    padding: px2rem(20px);
+    text-indent: px2rem(20px);
+    color: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    bottom: 100%;
+    background: rgba(0,0,0,.7);
+    transition: all 1s ease-in-out;
+
+  }
+}

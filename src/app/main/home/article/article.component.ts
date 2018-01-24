@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ArticleService} from "../../../shared/api/main/article.service";
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-article',
@@ -14,10 +14,11 @@ export class ArticleComponent implements OnInit {
   public articlePage: number;
 
   constructor(private articleService: ArticleService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,) {
   }
 
   ngOnInit() {
+    // 初始化数据
     this.route.data.subscribe(data => {
       const article = data.ArticleInfos.article;
       this.articleItem = JSON.stringify(article);
@@ -26,5 +27,7 @@ export class ArticleComponent implements OnInit {
       this.articlePage = parseInt(data.ArticleInfos.page);
     });
   }
+
+
 
 }

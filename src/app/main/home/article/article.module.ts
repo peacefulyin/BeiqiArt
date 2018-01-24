@@ -5,6 +5,7 @@ import {SafeHtmlPipe} from "../../../shared/pipe/safe-html.pipe";
 import {ArticleService} from "../../../shared/api/main/article.service";
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
+import {SafeStylePipe} from "../../../shared/pipe/safe-style.pipe";
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import {RouterModule} from '@angular/router';
   declarations: [
     ArticleComponent,
     ArticleContentComponent,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    SafeStylePipe
   ],
   providers: [
     ArticleService
@@ -22,7 +24,8 @@ import {RouterModule} from '@angular/router';
   exports: [
     ArticleComponent,
     ArticleContentComponent,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    SafeStylePipe
   ],
 })
 

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {VideoService} from "../../../shared/api/main/video.service";
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-video-list',
@@ -11,19 +12,33 @@ export class VideoListComponent implements OnInit {
   public defaultVideoList;
   public videoList;
 
-  constructor(private videoService: VideoService) {
-    console.log('hasVideo', sessionStorage.getItem('hasVideo'));
+  constructor(private videoService: VideoService,
+              private router: Router,
+              private route: ActivatedRoute) {
+    this.getVideos();
+  }
+
+  private getVideos() {
     if (!sessionStorage.getItem('hasVideo')) {
       this.videoService.getColorsDefaultList().subscribe(rxData => {
         this.defaultVideoList = rxData;
-        this.videoList = this.defaultVideoList[0];
+        this.selectList(this.defaultVideoList);
         sessionStorage.setItem("defaultVideoList", this.defaultVideoList);
         sessionStorage.setItem("hasVideo", 'true');
       });
     } else {
       this.defaultVideoList = JSON.parse(sessionStorage.getItem('defaultVideoList'));
-      this.videoList = this.defaultVideoList[0];
+      this.selectList(this.defaultVideoList);
     }
+  }
+
+  private selectList(defaultList) {
+    this.route.params.subscribe((data) => {
+      const videoName = data.name;
+      this.videoList = defaultList.find(list => {
+        return list.title === videoName;
+      });
+    });
   }
 
   ngOnInit() {

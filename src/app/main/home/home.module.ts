@@ -27,7 +27,7 @@ import {GenneralComponent} from "../../components/genneral/genneral.component";
 import {LoadingComponent} from "../../components/loading/loading.component";
 
 import {GenneralService} from "../../shared/api/main/genneral.service";
-
+import {PersonService} from "../../shared/api/main/person.service";
 
 @NgModule({
   imports: [
@@ -45,7 +45,8 @@ import {GenneralService} from "../../shared/api/main/genneral.service";
     ComponentsModule
   ],
   providers:[
-    GenneralService
+    GenneralService,
+    PersonService
   ],
   entryComponents: [DialogComponent, LoadingComponent],
   declarations: [

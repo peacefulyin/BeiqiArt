@@ -1,10 +1,10 @@
 <div class="pro-list-card" [ngStyle]="{'background-color':cardColor}">
   <div *ngIf="CardType==='index'" class="img-con">
-    <img [src]="imgUrl" >
+    <img [src]="imgUrl">
   </div>
   <div class="list-card-info" [ngStyle]="{'margin': CardType==='videoMaster'? 0 : auto}">
     <div *ngIf="CardType==='index'" class="card-subtitle"><span>{{subTitle}}</span></div>
-    <a routerLink='/videoList/A' class="card-link">
+    <a [routerLink]="(CardType==='index'? '/course/':'/videoList/')+title" class="card-link">
       <div class="card-title" [ngStyle]="{'margin': CardType==='videoMaster'? 0 : auto}">
         <p>{{title}}</p>
       </div>
@@ -14,13 +14,13 @@
     </a>
 
     <div *ngIf="CardType==='index'" class="card-button-con">
-      <a routerLink='/course/detail/a' class="card-link">
+      <a [routerLink]="'/course/'+title" class="card-link">
         <button>查看详情</button>
       </a>
     </div>
   </div>
   <div *ngIf="CardType==='videoMaster'" class="img-con">
-    <img [src]="imgUrl" >
+    <img [src]="imgUrl">
   </div>
 
 

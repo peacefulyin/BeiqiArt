@@ -1,7 +1,5 @@
-import {Component, OnInit, Input, OnChanges} from '@angular/core';
-import {DomSanitizer} from '@angular/platform-browser';
+import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {apiRectify} from "../../../../util/js/apiTools";
-
 
 
 @Component({
@@ -15,20 +13,20 @@ export class ArticleContentComponent implements OnInit, OnChanges {
   @Input() article: any;
   public articleContent: object;
 
-  constructor(private sanitizer: DomSanitizer) {
+  constructor() {
   }
 
   ngOnInit() {
-    if (this.article) {
-      this.article = JSON.parse(this.article);
-      this.articleContent = apiRectify(this.article.content);
-    }
 
   }
 
   ngOnChanges() {
-
-
+    if (this.article) {
+      let beforeArticle = JSON.parse(this.article).content;
+      beforeArticle += '<style type="text/css">img { width: 100% !important;height: auto !important;}</style>';
+      this.articleContent = apiRectify(beforeArticle);
+    }
   }
+
 
 }

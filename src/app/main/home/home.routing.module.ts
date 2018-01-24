@@ -23,7 +23,7 @@ const routes: Routes = [
         component: VideosMasterComponent,
       },
       {
-        path: 'videoList/:type',
+        path: 'videoList/:name',
         component: VideoListComponent,
       },
       {

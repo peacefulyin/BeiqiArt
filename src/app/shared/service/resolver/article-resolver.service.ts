@@ -9,10 +9,12 @@ import {ArticleService} from "../../api/main/article.service";
 
 @Injectable()
 export class ArticleResolver implements Resolve<any> {
-  constructor(private articleService: ArticleService, private router: Router) {
+  constructor(private articleService: ArticleService,
+              private router: Router) {
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
+    console.log('resolverActivate')
     const id = route.paramMap.get('id');
 
     return this.articleService.getArticle(id).map(article => {

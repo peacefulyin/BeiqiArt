@@ -41,10 +41,8 @@
   </div>
   <div class="si-middle container-fluid">
     <div class="pro-list row">
-      <app-pro-list-card CardType="index" imgUrl="../assets/img/main/proList/cp1.jpg" title="舞蹈"  class="pro-listcard col-3" cardColor="rgb(185,126,187)"></app-pro-list-card>
-      <app-pro-list-card CardType="index" imgUrl="../assets/img/main/proList/cp2.jpg" title="主持"  class="pro-listcard col-3" cardColor="rgb(90,161,227)" ></app-pro-list-card>
-      <app-pro-list-card CardType="index" imgUrl="../assets/img/main/proList/cp3.jpg" title="绘画"  class="pro-listcard col-3" cardColor="rgb(111,195,84)" ></app-pro-list-card>
-      <app-pro-list-card CardType="index" imgUrl="../assets/img/main/proList/cp4.jpg" title="钢琴"  class="pro-listcard col-3" cardColor="rgb(106,125,196)"></app-pro-list-card>
+      <app-pro-list-card *ngFor="let course of defaultCourses" CardType="index" imgUrl="../assets/img/main/proList/cp1.jpg" [title]="course.name"  class="pro-listcard col-3" [cardColor]="course.color"></app-pro-list-card>
+
     </div>
   </div>
   <div class="school-intro-con">

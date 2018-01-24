@@ -3,28 +3,9 @@
 
   <div class="t-list-con container">
     <div class="row">
-      <div class="col-4">
-        <app-common-card desc="这是描述这是描述这是描述这是描述这是描述这是描述" imgUrl="http://via.placeholder.com/300x300" title="Monkey"></app-common-card>
+      <div class="col-4" *ngFor="let teacher of teachers">
+        <app-common-card [desc]="teacher.describe" [imgUrl]="teacher.avatar? teacher.avatar: 'http://via.placeholder.com/300x300'" [title]="teacher.name"></app-common-card>
       </div>
-      <div class="col-4">
-        <app-common-card [fontSize]="18" imgUrl="http://via.placeholder.com/300x300" title="Monkey"></app-common-card>
-      </div>
-      <div class="col-4">
-        <app-common-card [fontSize]="18" imgUrl="http://via.placeholder.com/300x300" title="Monkey"></app-common-card>
-      </div>
-      <div class="col-4">
-        <app-common-card [fontSize]="18" imgUrl="http://via.placeholder.com/300x300" title="Monkey"></app-common-card>
-      </div>
-      <div class="col-4">
-        <app-common-card [fontSize]="18" imgUrl="http://via.placeholder.com/300x300" title="Monkey"></app-common-card>
-      </div>
-      <div class="col-4">
-        <app-common-card [fontSize]="18" imgUrl="http://via.placeholder.com/300x300" title="Monkey"></app-common-card>
-      </div>
-      <div class="col-4">
-        <app-common-card [fontSize]="18" imgUrl="http://via.placeholder.com/300x300" title="Monkey"></app-common-card>
-      </div>
-
     </div>
 
   </div>
