@@ -45,15 +45,15 @@ export class MediaService {
 
 
   getVideoListById(id) {
-    return this.http.get(`http://127.0.0.1/api/videoList/${id}`);
+    return this.http.get(`http://39.108.232.114/api/videoList/${id}`);
   }
 
   getVideoListByName(name) {
-    return this.http.get(`http://127.0.0.1/api/videoList?search=${name}`);
+    return this.http.get(`http://39.108.232.114/api/videoList?search=${name}`);
   }
 
   getDefaultList() {
-    return this.http.get(`http://127.0.0.1/api/videoList/default`);
+    return this.http.get(`http://39.108.232.114/api/videoList/default`);
   }
 
   getColorsDefaultList() {
@@ -72,7 +72,7 @@ export class MediaService {
    */
 
   getIndexBanner() {
-    return this.http.get('http://127.0.0.1/api/banner?search=1').map(data => {
+    return this.http.get('http://39.108.232.114/api/banner?search=1').map(data => {
       // 因为search返回的list
       return data[0];
     });
