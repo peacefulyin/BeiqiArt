@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs/Observable';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class PersonService {
@@ -11,7 +10,7 @@ export class PersonService {
   }
 
   getTeachers() {
-    return this.http.get(`http://localhost:8000/api/teacher`);
+    return this.http.get(`http://localhost/api/teacher`);
   }
 
 

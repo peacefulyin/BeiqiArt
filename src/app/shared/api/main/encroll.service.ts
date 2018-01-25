@@ -4,7 +4,7 @@ import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class EncrollService {
-  private API_PATH = 'http://127.0.0.1:8000/api/enroll';
+  private API_PATH = 'http://127.0.0.1/api/enroll';
 
 
   constructor(private http: HttpClient) {

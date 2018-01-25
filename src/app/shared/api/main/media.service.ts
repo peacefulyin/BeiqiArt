@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs/Observable';
 import * as Rx from 'rxjs/Rx';
 
 const itemList = [
@@ -46,15 +45,15 @@ export class MediaService {
 
 
   getVideoListById(id) {
-    return this.http.get(`http://127.0.0.1:8000/api/videoList/${id}`);
+    return this.http.get(`http://127.0.0.1/api/videoList/${id}`);
   }
 
   getVideoListByName(name) {
-    return this.http.get(`http://127.0.0.1:8000/api/videoList?search=${name}`);
+    return this.http.get(`http://127.0.0.1/api/videoList?search=${name}`);
   }
 
   getDefaultList() {
-    return this.http.get(`http://127.0.0.1:8000/api/videoList/default`);
+    return this.http.get(`http://127.0.0.1/api/videoList/default`);
   }
 
   getColorsDefaultList() {
@@ -73,7 +72,7 @@ export class MediaService {
    */
 
   getIndexBanner() {
-    return this.http.get('http://127.0.0.1:8000/api/banner?search=1').map(data => {
+    return this.http.get('http://127.0.0.1/api/banner?search=1').map(data => {
       // 因为search返回的list
       return data[0];
     });

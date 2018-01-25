@@ -10,7 +10,7 @@ export class CommonService {
   }
 
   getDialogCard() {
-    return this.http.get('http://127.0.0.1:8000/api/commonCard?search=1');
+    return this.http.get('http://127.0.0.1/api/commonCard?search=1');
   }
 
 }
