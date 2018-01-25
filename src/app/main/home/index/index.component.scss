@@ -13,9 +13,13 @@
 .services-info {
   width: 100%;
 
+  background: url("/assets/img/main/indexbg1.jpg") no-repeat;
+
+
   //三排介绍按钮
   .si-top {
     height: px2rem(290px);
+    padding: 10px;
 
     .row-elem-title {
       font-size: px2rem(24px);

@@ -9,6 +9,7 @@ import {CourseResolver} from "../../../shared/service/resolver/course-resolver.s
 import {CourseService} from "../../../shared/api/main/course.service";
 import {CommonCardComponent} from "../../../components/common-card/common-card.component";
 import {ComponentsModule} from "../../../shared/components.module";
+import {TransUrlPipe} from "../../../shared/pipe/trans-url.pipe";
 
 @NgModule({
   imports: [
@@ -22,10 +23,12 @@ import {ComponentsModule} from "../../../shared/components.module";
     ProListCardComponent,
     CourseDetailComponent,
     CommonCardComponent,
+    // 待删除
+    TransUrlPipe,
   ],
   providers: [
     CourseResolver,
-    CourseService
+    CourseService,
   ],
   exports: [
     CourseComponent,

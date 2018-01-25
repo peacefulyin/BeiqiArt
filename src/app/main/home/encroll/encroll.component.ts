@@ -43,26 +43,6 @@ export class EncrollComponent implements OnInit {
 
   }
 
-  public showIt() {
-    this.genneralService.showDialog({
-      title: 'title',
-      subTitle: 'subTitle',
-      imgUrl: 'http://via.placeholder.com/550x550',
-      detail: 'this is detail.............',
-      component: DialogComponent
-    });
-  }
 
-  public showLoading() {
-    this.genneralService.loading({
-      showCover: false,
-      showLoading: false,
-      prompt: {
-        title: 'title',
-        info: 'info',
-        color: 'danger',
-      },
-      component: LoadingComponent
-    });
-  }
+
 }

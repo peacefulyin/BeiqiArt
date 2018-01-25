@@ -7,12 +7,12 @@ import {
   ComponentRef,
   ComponentFactory
 } from '@angular/core';
+import {Prompt} from "../../model/main/genneral.model";
 
 @Injectable()
 export class GenneralService implements OnInit {
   // 显示弹窗
-  public showDialogEmitter: EventEmitter<object> = new EventEmitter();
-  public closeDialogEmitter: EventEmitter<object> = new EventEmitter();
+  public DialogEmitter: EventEmitter<object> = new EventEmitter();
 
   public loadingEmitter: EventEmitter<object> = new EventEmitter();
 
@@ -31,29 +31,60 @@ export class GenneralService implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * {component:,
+   * title:,
+   * subTitle:,
+   * describe:,
+   * imgUrl:}
+   *
+   * @param data
+   */
   showDialog(data) {
-    this.showDialogEmitter.emit(data);
+    this.DialogEmitter.emit(data);
   }
 
   closeDialog() {
-    this.closeDialogEmitter.emit();
+    this.DialogEmitter.emit({clear: true});
   }
 
-  loading(data) {
-    this.loadingEmitter.emit(data);
+  /**
+   * {component:,
+   * prompt?:{title:,info:,color:,},
+   * showCover?:,
+   * showLoading?:}
+   *
+   * @param data
+   */
+
+
+  showCover() {
+    this.loadingEmitter.emit({showCover: true});
   }
 
-  showLoading(show) {
-    this.showLoadingEmitter.emit(show);
+  showPrompt(data: Prompt) {
+    this.loadingEmitter.emit({...data, showPrompt: true});
   }
 
-  showCover(show) {
-    this.showCoverEmitter.emit(show);
-
+  showLoading() {
+    this.loadingEmitter.emit({showLoading: true});
   }
 
-  showPrompt(data) {
-      this.showPromptEmitter.emit(data);
+  closeCover() {
+    this.loadingEmitter.emit({showCover: false});
   }
+
+  closePrompt() {
+    this.loadingEmitter.emit({showPrompt: false});
+  }
+
+  closeLoading() {
+    this.loadingEmitter.emit({showLoading: false});
+  }
+
+  clearAllLoadings() {
+    this.loadingEmitter.emit({clear: true});
+  }
+
 
 }

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {VideoService} from "../../../shared/api/main/video.service";
+import {MediaService} from "../../../shared/api/main/media.service";
 import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ export class VideoListComponent implements OnInit {
   public defaultVideoList;
   public videoList;
 
-  constructor(private videoService: VideoService,
+  constructor(private videoService: MediaService,
               private router: Router,
               private route: ActivatedRoute) {
     this.getVideos();

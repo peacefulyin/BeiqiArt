@@ -2,14 +2,14 @@
   <div *ngIf="CardType==='index'" class="img-con">
     <img [src]="imgUrl">
   </div>
-  <div class="list-card-info" [ngStyle]="{'margin': CardType==='videoMaster'? 0 : auto}">
+  <div class="list-card-info" [ngStyle]="{'margin': CardType==='videoMaster'? 0 : 'auto'}">
     <div *ngIf="CardType==='index'" class="card-subtitle"><span>{{subTitle}}</span></div>
     <a [routerLink]="(CardType==='index'? '/course/':'/videoList/')+title" class="card-link">
-      <div class="card-title" [ngStyle]="{'margin': CardType==='videoMaster'? 0 : auto}">
+      <div class="card-title" [ngStyle]="{'margin': CardType==='videoMaster'? 0 : 'auto'}">
         <p>{{title}}</p>
       </div>
       <div *ngIf="CardType==='videoMaster'"
-           class="card-subtitle" [ngStyle]="{'margin-bottom': CardType==='videoMaster'? '20px' : auto}">
+           class="card-subtitle" [ngStyle]="{'margin-bottom': CardType==='videoMaster'? '20px' : 'auto'}">
         <span>点击查看视频</span></div>
     </a>
 

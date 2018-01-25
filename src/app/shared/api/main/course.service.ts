@@ -38,3 +38,4 @@ export class CourseService {
   getColorsDefaultCourse() {
     return addProp(this.getDefaultCourse(), defaultCoursesColors, 'color');
   }
+}

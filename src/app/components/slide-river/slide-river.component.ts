@@ -1,7 +1,7 @@
 import {Component, OnInit, ElementRef, ViewChild, AfterViewInit, Input, Output, EventEmitter} from '@angular/core';
 import {VideoSliderItem} from "../../shared/model/main/video-list.model";
 import {pagingList} from '../../util/js/paging';
-import {VideoService} from "../../shared/api/main/video.service";
+import {MediaService} from "../../shared/api/main/media.service";
 
 @Component({
   selector: 'app-slide-river',
@@ -19,7 +19,7 @@ export class SlideRiverComponent implements OnInit, AfterViewInit {
   public liElem: any;
   public nowMargin: number = 0;
 
-  constructor(private elementRef: ElementRef, private videoService: VideoService) {
+  constructor(private elementRef: ElementRef, private videoService: MediaService) {
     this.liWidth = (1 / this.pageSize) * 100 + '%';
   }
 

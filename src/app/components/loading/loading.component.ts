@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import {promptColors} from "../../shared/model/main/genneral.model";
 import {
   trigger,
@@ -24,12 +24,12 @@ import {
     ])
   ]
 })
-export class LoadingComponent implements OnInit {
+export class LoadingComponent implements OnInit, OnChanges {
   @Input() showCover: boolean = false;
   @Input() showLoading: boolean = false;
   @Input() showPrompt: boolean = false;
-  @Input() promptTitle: string = '';
-  @Input() promptInfo: string = '';
+  @Input() promptTitle: string;
+  @Input() promptInfo: string;
   @Input() promptColor: string;
   public color: string = promptColors.info;
   constructor() {
@@ -37,6 +37,10 @@ export class LoadingComponent implements OnInit {
 
   ngOnInit() {
     this.color = promptColors[this.promptColor];
+  }
+
+  ngOnChanges() {
+
   }
 
 }

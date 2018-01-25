@@ -2,7 +2,6 @@ import {
   Component,
   OnInit,
   OnDestroy,
-  EventEmitter,
   ViewChild,
   ViewContainerRef,
   ComponentFactoryResolver,
@@ -27,7 +26,8 @@ export class GenneralComponent implements OnInit, OnDestroy {
   private loadingComponentRef: ComponentRef<LoadingComponent>;
   @ViewChild('loadingContainer', {read: ViewContainerRef}) loadingContainer: ViewContainerRef;
 
-  private hasLoadingComponent: boolean = false;
+  private dialogInstance;
+  private loadingInstance;
 
   constructor(private resolver: ComponentFactoryResolver, private genneralService: GenneralService) {
   }
@@ -42,48 +42,70 @@ export class GenneralComponent implements OnInit, OnDestroy {
     this.loadingComponentRef.destroy();
   }
 
+  // 弹窗组件初始化
   dialogInit() {
-    this.genneralService.showDialogEmitter.subscribe(data => {
-      this.dialogContainer.clear();
-      const factory: ComponentFactory<DialogComponent> = this.resolver.resolveComponentFactory(data.component);
-      this.dialogComponentRef = this.dialogContainer.createComponent(factory);
-      this.dialogComponentRef.instance.title = data.title;
-      this.dialogComponentRef.instance.subTitle = data.subTitle;
-      this.dialogComponentRef.instance.imgUrl = data.imgUrl;
-      this.dialogComponentRef.instance.detail = data.detail;
+    this.genneralService.DialogEmitter.subscribe(data => {
+      // 清楚原来的组件,初始化新组件
+      if (!this.dialogInstance) {
+        [this.dialogComponentRef, this.dialogInstance] = <[ComponentRef<DialogComponent>, any]>this.genInstance(DialogComponent)
+      }
+      if (data.clear) {
+        this.dialogComponentRef.destroy();
+        this.dialogInstance = null;
+        return;
+      }
+      this.dialogInstance.title = data.title ? data.title : '';
+      this.dialogInstance.subTitle = data.subTitle ? data.subTitle : '';
+      this.dialogInstance.imgUrl = data.imgUrl ? data.imgUrl : '';
+      this.dialogInstance.describe = data.describe ? data.describe : '';
     });
-    this.genneralService.closeDialogEmitter.subscribe(() => {
-      this.dialogComponentRef.destroy();
-    });
+  }
 
+  // 组件初始化
+  genInstance(component) {
+    const factory: ComponentFactory<never> = this.resolver.resolveComponentFactory(component);
+    const componentRef = this.loadingContainer.createComponent(factory);
+    return [componentRef, componentRef.instance];
   }
 
   loadingInit() {
     this.genneralService.loadingEmitter.subscribe(data => {
-      if (data.clear) {
-        this.loadingComponentRef.destroy();
-        return;
-      }
-      this.loadingContainer.clear()
-      const factory: ComponentFactory<LoadingComponent> = this.resolver.resolveComponentFactory(data.component);
-      this.loadingComponentRef = this.loadingContainer.createComponent(factory);
-      this.loadingComponentRef.instance.showCover = data.showCover ? data.showCover : false;
-      this.loadingComponentRef.instance.showLoading = data.showLoading ? data.showCover : false;
-      if (data.prompt) {
-        this.loadingComponentRef.instance.showPrompt = true;
-        this.loadingComponentRef.instance.promptTitle = data.prompt.title ? data.prompt.title : '';
-        this.loadingComponentRef.instance.promptInfo = data.prompt.info ? data.prompt.info : '';
-        this.loadingComponentRef.instance.promptColor = data.prompt.color ? data.prompt.color : 'info';
-        setTimeout(() => {
-          this.loadingComponentRef.instance.showPrompt = false;
-          if (!data.prompt && !data.showCover && !data.showLoading) {
-            this.loadingComponentRef.destroy();
-          }
-        }, 2000);
+
+      // 获取初始化组件
+      if (!this.loadingInstance) {
+        [this.loadingComponentRef, this.loadingInstance] = <[ComponentRef<LoadingComponent>, any]>this.genInstance(LoadingComponent);
       }
 
-      if (!data.prompt && !data.showCover && !data.showLoading) {
+      if (data.clear) {
         this.loadingComponentRef.destroy();
+        this.loadingInstance = null;
+        return;
+      }
+
+      // 判断是否显示cover或者loading状态
+      if (data.hasOwnProperty('showCover')) {
+        this.loadingInstance.showCover = data.showCover;
+      }
+      if (data.hasOwnProperty('showLoading')) {
+        this.loadingInstance.showLoading = data.showLoading;
+      }
+      // 是否存在提示栏
+      if (data.showPrompt) {
+        this.loadingInstance.showPrompt = true;
+        this.loadingInstance.promptTitle = data.title ? data.title : '';
+        this.loadingInstance.promptInfo = data.info ? data.info : '';
+        this.loadingInstance.promptColor = data.color ? data.color : 'info';
+        if (data.autoHide) {
+          setTimeout(() => {
+            this.loadingInstance.showPrompt = false;
+          }, 2000);
+        }
+      }
+      // loadingComponent 清除条件判断
+      if (!this.loadingInstance.showPrompt && !this.loadingInstance.showCover && !this.loadingInstance.showLoading) {
+        this.loadingComponentRef.destroy();
+        this.loadingInstance = null;
+
       }
 
 

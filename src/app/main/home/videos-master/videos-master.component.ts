@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {VideoService} from "../../../shared/api/main/video.service";
+import {MediaService} from "../../../shared/api/main/media.service";
 import * as Rx from 'rxjs/Rx';
 
 @Component({
@@ -10,7 +10,7 @@ import * as Rx from 'rxjs/Rx';
 export class VideosMasterComponent implements OnInit {
   public defaultVideoList;
 
-  constructor(private videoService: VideoService) {
+  constructor(private videoService: MediaService) {
     this.getVideos();
   }
 

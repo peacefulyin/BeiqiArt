@@ -1,13 +1,17 @@
-<div class="common-dialog" *ngIf="title">
-  <h1>{{title}}</h1>
-  <h2>{{subTitle}}</h2>
-  <div class="img-con">
-    <img [src]="imgUrl" alt="">
+<div class="dialog-con">
+  <div class="common-dialog" *ngIf="title">
+    <button mat-mini-fab color="accent" class="close-button" (click)="close()"  >X</button>
+    <h1>{{title}}</h1>
+    <h2>{{subTitle}}</h2>
+    <div class="img-con">
+      <img [src]="imgUrl" alt="">
+    </div>
+    <div class="diolog-info">
+      <p>{{describe}}</p>
+    </div>
+    <div class="forbit-button-con">
+      <button mat-raised-button (click)="nerverShow()">不再提示</button>
+    </div>
   </div>
-  <div class="diolog-info">
-    <p>{{detail}}</p>
-  </div>
-  <div class="button-con">
-    <button mat-raised-button (click)="close()">不再提示</button>
-  </div>
+
 </div>

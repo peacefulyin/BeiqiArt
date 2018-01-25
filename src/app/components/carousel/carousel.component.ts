@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'app-carousel',
@@ -6,20 +6,16 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./carousel.component.scss']
 })
 export class CarouselComponent implements OnInit {
-  myInterval: number = 1500;
-  slides: any[] = [];
+  @Input() slides;
   activeSlideIndex: number = 0;
-  noWrapSlides: boolean = false;
 
   constructor() {
-    for (let i = 0; i < 2; i++) {
-      this.addSlide();
-    }
+
   }
 
-  addSlide(): void {
+  addSlide(img): void {
     this.slides.push({
-      image: `assets/img/bg${this.slides.length % 8 + 1}.png`
+      image: img,
     });
   }
 
@@ -30,5 +26,7 @@ export class CarouselComponent implements OnInit {
 
   ngOnInit() {
   }
+
+
 
 }
