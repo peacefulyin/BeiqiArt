@@ -5,6 +5,9 @@
 /tmp
 /out-tsc
 
+# 排除开发环境api文件夹
+/src/app/shared/api
+
 # dependencies
 /node_modules
 
