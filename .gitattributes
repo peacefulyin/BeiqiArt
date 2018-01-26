@@ -1,0 +1,2 @@
+# 排除开发环境api文件夹
+/src/app/shared/api merge=ours
