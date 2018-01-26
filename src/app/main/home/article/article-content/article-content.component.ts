@@ -1,4 +1,5 @@
 import {Component, Input, OnChanges, OnInit} from '@angular/core';
+import {DomSanitizer} from '@angular/platform-browser';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class ArticleContentComponent implements OnInit, OnChanges {
   @Input() article: any;
   public articleContent: object;
 
-  constructor() {
+  constructor(private sanitizer: DomSanitizer) {
   }
 
   ngOnInit() {
@@ -22,8 +23,8 @@ export class ArticleContentComponent implements OnInit, OnChanges {
   ngOnChanges() {
     if (this.article) {
       let beforeArticle = JSON.parse(this.article).content;
-      beforeArticle += '<style type="text/css">img { width: 100% !important;height: auto !important;}</style>';
-      this.articleContent = beforeArticle;
+      beforeArticle += '<style type="text/css">img { max-width: 100% !important;}</style>';
+      this.articleContent = this.sanitizer.bypassSecurityTrustHtml(beforeArticle);
     }
   }
 
