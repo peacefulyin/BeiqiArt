@@ -18,11 +18,14 @@ export class ArticleResolver implements Resolve<any> {
 
     return this.articleService.getArticle(id).map(article => {
       if (article) {
+        console.log(article)
         if (id === 'firstPage') {
           const reallyId = article['id'];
           this.router.navigate(['/article/', reallyId]);
+        } else {
+          return {article: article, page: id};
+
         }
-        return {article: article, page: id};
       } else {
         this.router.navigate(['/']);
         return null;
