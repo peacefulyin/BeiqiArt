@@ -10,7 +10,7 @@ export class ArticleService {
   }
 
   getArticle(id) {
-    return this.http.get(`/api/article/${id}`);
+    return this.http.get(`http://39.108.232.114/api/article/${id}`);
   }
 
 }

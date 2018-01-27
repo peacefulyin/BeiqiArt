@@ -10,24 +10,24 @@ export class CourseService {
   }
 
   getCourseDetailById(id) {
-    return this.http.get(`/api/course/${id}/detail`);
+    return this.http.get(`http://39.108.232.114/api/course/${id}/detail`);
   }
 
   getCourseDetailByName(name) {
-    const nameOb = this.http.get(`/api/course?search=${name}`).map(data => {
+    const nameOb = this.http.get(`http://39.108.232.114/api/course?search=${name}`).map(data => {
       return data[0].id;
     });
     return nameOb.flatMap(id => {
-      return this.http.get(`/api/course/${id}/detail`);
+      return this.http.get(`http://39.108.232.114/api/course/${id}/detail`);
     });
   }
 
   getDefaultCourse() {
-    return this.http.get(`/api/course/default`);
+    return this.http.get(`http://39.108.232.114/api/course/default`);
   }
 
   getAllCourse() {
-    return this.http.get(`/api/course`);
+    return this.http.get(`http://39.108.232.114/api/course`);
   }
 
   getColorfulAllCourse() {
