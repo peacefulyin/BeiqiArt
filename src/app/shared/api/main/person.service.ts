@@ -10,7 +10,7 @@ export class PersonService {
   }
 
   getTeachers() {
-    return this.http.get(`http://39.108.232.114/api/teacher`);
+    return this.http.get(`/api/teacher`);
   }
 
 
