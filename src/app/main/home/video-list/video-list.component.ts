@@ -11,6 +11,7 @@ export class VideoListComponent implements OnInit {
   public VideoIndex: number;
   public defaultVideoList;
   public videoList;
+  public listTile;
 
   constructor(private videoService: MediaService,
               private router: Router,
@@ -20,8 +21,8 @@ export class VideoListComponent implements OnInit {
 
   private getVideos() {
     if (!sessionStorage.getItem('hasVideo')) {
-      this.videoService.getColorsDefaultList().subscribe(rxData => {
-        this.defaultVideoList = rxData;
+      this.videoService.getColorsDefaultList().subscribe(data => {
+        this.defaultVideoList = data;
         this.selectList(this.defaultVideoList);
         sessionStorage.setItem("defaultVideoList", this.defaultVideoList);
         sessionStorage.setItem("hasVideo", 'true');

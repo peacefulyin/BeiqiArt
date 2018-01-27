@@ -1,10 +1,17 @@
 @import "~assets/css/common";
 .encroll{
+  .encroll-row{
+    height: 510px;
+
+  }
 
   margin: 80px 0;
   .form-con{
-    height: 500px;
+    height: 100%;
+
     form{
+      height: 100%;
+
       padding: 35px;
       h2{
         text-align: center;
@@ -27,7 +34,7 @@
 
 
   .encroll-img-con{
-    height: 500px;
+    height: 100%;
     img{
       height: 100%;
     }

@@ -1,5 +1,5 @@
 <div class="slider-river d-flex align-items-center">
-  <a class="sr-left" (click)="handleClick($event)" href="#"><</a>
+  <a class="sr-left" (click)="handleClick($event)" href="#"></a>
   <div class="sl-items-con">
     <ul class="sl-items-ul" #ul>
       <li *ngFor="let item of itemList;let i=index"  class="sl-items-li" [ngStyle]="{'width':liWidth,'margin-right': liWidth/10}">
@@ -7,5 +7,5 @@
       </li>
     </ul>
   </div>
-  <a class="sr-right" (click)="handleClick($event)" href="#">></a>
+  <a class="sr-right" (click)="handleClick($event)" href="#"></a>
 </div>

@@ -10,7 +10,7 @@
       <div class="row" *ngIf="teachers">
         <div class="col-2" *ngFor="let teacher of teachers">
           <app-common-card [fontSize]="8" [desc]="teacher.describe"
-                           [imgUrl]="teacher.avatar?'http://via.placeholder.com/300x300': 'http://via.placeholder.com/300x300'"
+                           [imgUrl]="teacher.avatar? teacher.avatar: 'http://via.placeholder.com/300x300'"
                            [title]="teacher.name"></app-common-card>
         </div>
       </div>

@@ -1,4 +1,15 @@
 .slider-river{
+  .sr-left, .sr-right{
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background: url("/assets/img/leftArr.png") no-repeat;
+    &.sr-right{
+      transform-origin:50% 50%;
+      transform: rotate(180deg);
+    }
+    }
+
   .sl-items-con{
     width: 100%;
     overflow: hidden;
